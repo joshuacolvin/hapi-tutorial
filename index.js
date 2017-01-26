@@ -2,6 +2,7 @@
 
 const Hapi = require('hapi');
 const server = new Hapi.Server();
+const products = require('./products.json');
 
 server.connection({
     host: 'localhost',
@@ -19,6 +20,12 @@ server.route([{
     path: '/about',
     handler: function (request, reply) {
         return reply('About');
+    }
+}, {
+    method: 'GET',
+    path: '/products',
+    handler: function (request, reply) {
+        return reply(products);
     }
 }]);
 
