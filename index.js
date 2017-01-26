@@ -27,6 +27,20 @@ server.route([{
     handler: function (request, reply) {
         return reply(products);
     }
+}, {
+    method: 'GET',
+    path: '/products/{id}',
+    handler: function (request, reply) {
+        const product = products.filter(function (product) {
+            return product.id === request.params.id
+        });
+
+        if (product.length) {
+            reply(product)
+        } else {
+            reply('No product found with the id: ' + request.params.id);
+        }
+    }
 }]);
 
 server.start(function () {
