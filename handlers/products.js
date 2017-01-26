@@ -17,3 +17,10 @@ exports.findOne = function (request, reply) {
         reply('No product found with the id: ' + request.params.id);
     }
 };
+
+exports.create = function (request, reply) {
+    if (request.payload) {
+        products.push(JSON.parse(request.payload));
+    }
+    reply(request.payload);
+};

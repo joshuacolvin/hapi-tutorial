@@ -22,4 +22,8 @@ module.exports = [{
     method: 'GET',
     path: '/products/{id}',
     handler: Products.findOne
+}, {
+    method: 'POST',
+    path: '/products',
+    handler: Products.create
 }];
