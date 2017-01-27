@@ -7,13 +7,5 @@ exports.find = function (request, reply) {
 };
 
 exports.findOne = function (request, reply) {
-    const product = products.filter(function (product) {
-        return product.id === request.params.id
-    });
-
-    if (product.length) {
-        reply(product)
-    } else {
-        reply('No product found with the id: ' + request.params.id);
-    }
+    return reply(products[request.params.id - 1]);
 };
