@@ -14,4 +14,8 @@ module.exports = [{
     method: 'POST',
     path: '/products',
     handler: Products.create
+}, {
+    method: 'PUT',
+    path: '/products/{id}',
+    handler: Products.update
 }];

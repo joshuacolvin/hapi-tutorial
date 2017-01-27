@@ -16,3 +16,11 @@ exports.create = function (request, reply) {
     }
     reply(request.payload);
 };
+
+exports.update = function (request, reply) {
+    let product = products[request.params.id - 1]
+    if (request.payload) {
+        product = Object.assign(product, request.payload);
+    }
+    reply(product);
+};
