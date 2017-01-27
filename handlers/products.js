@@ -7,20 +7,13 @@ exports.find = function (request, reply) {
 };
 
 exports.findOne = function (request, reply) {
-    const product = products.filter(function (product) {
-        return product.id === request.params.id
-    });
-
-    if (product.length) {
-        reply(product)
-    } else {
-        reply('No product found with the id: ' + request.params.id);
-    }
+    reply(products[request.params.id - 1])
 };
 
 exports.create = function (request, reply) {
     if (request.payload) {
-        products.push(JSON.parse(request.payload));
+        const payload = JSON.parse(request.payload)
+        products.push(payload);
     }
-    reply(request.payload);
+    reply(payload);
 };
