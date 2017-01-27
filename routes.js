@@ -18,4 +18,8 @@ module.exports = [{
     method: 'PUT',
     path: '/products/{id}',
     handler: Products.update
+}, {
+    method: 'DELETE',
+    path: '/products/{id}',
+    handler: Products.delete
 }];

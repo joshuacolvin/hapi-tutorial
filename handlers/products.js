@@ -24,3 +24,10 @@ exports.update = function (request, reply) {
     }
     reply(product);
 };
+
+exports.delete = function (request, reply) {
+    if (products[request.params.id - 1]) {
+        products.splice(request.params.id - 1, 1);
+    }
+    reply(products);
+};
