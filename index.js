@@ -11,18 +11,6 @@ server.connection({
 
 server.route([{
     method: 'GET',
-    path: '/',
-    handler: function (request, reply) {
-        return reply('Hello world');
-    }
-}, {
-    method: 'GET',
-    path: '/about',
-    handler: function (request, reply) {
-        return reply('About');
-    }
-}, {
-    method: 'GET',
     path: '/products',
     handler: function (request, reply) {
         return reply(products);
