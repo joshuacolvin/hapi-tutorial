@@ -12,8 +12,7 @@ exports.findOne = function (request, reply) {
 
 exports.create = function (request, reply) {
     if (request.payload) {
-        const payload = JSON.parse(request.payload)
-        products.push(payload);
+        products.push(request.payload);
     }
-    reply(payload);
+    reply(request.payload);
 };
